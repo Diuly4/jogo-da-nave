@@ -1,69 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de senha</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>Game de Resgate</title>
 
+    <link href="./src/styles/main.css" rel="stylesheet" type="text/css">
+</head>
 <body>
-    <section class="conteudo">
-        <div class="conteudo-titulo">
-            <img src="unlock.svg" alt="cadeado fechado">
-            <h2 class="titulo-principal">Gerador de senhas</h2>
-            <h3 class="titulo-secundario">Gere instantaneamente uma senha aleatória e segura</h3>
-        </div>
-        <div class="conteudo-senha">
-            <label for="senha">Senha</label>
-            <input name="senha" type="text" id="campo-senha" readonly>
-        </div>
-        <div class="parametro">
-            <h3 class="parametro-titulo">Personalize sua senha</h3>
-            <div class="parametro-coluna__senha">
-                <div class="parametro-senha">
-                    <h4 class="parametro-senha__titulo">Número de caracteres</h4>
-                    <div class="parametro-senha-botoes">
-                        <button class="parametro-senha__botao">-</button>
-                        <p class="parametro-senha__texto">12</p>
-                        <button class="parametro-senha__botao">+</button>
-                    </div>
-                </div>
-                <div class="parametro-senha">
-                    <h4 class="parametro-senha__titulo">Características da senha</h4>
-                    <div class="parametro-senha-checkbox">
-                        <input name="maiusculo" type="checkbox" class="checkbox" checked>
-                        <label for="maiusculo">Letras maiúsculas</label>
-                    </div>
-                    <div class="parametro-senha-checkbox">
-                        <input name="minusculo" type="checkbox" class="checkbox">
-                        <label for="minusculo">Letras minúsculas</label>
-                    </div>
-                    <div class="parametro-senha-checkbox">
-                        <input name="numero" type="checkbox" class="checkbox">
-                        <label for="numero">Números</label>
-                    </div>
-                    <div class="parametro-senha-checkbox">
-                        <input name="simbolo" type="checkbox" class="checkbox">
-                        <label for="simbolo">Símbolos</label>
-                    </div>
-                </div>
-                <div class="parametro-senha">
-                    <h4 class="parametro-senha__titulo">Força da senha</h4>
-                    <div class="barra"></div>
-                    <div class="forca fraca"></div>
-                    <div class="parametro-senha-textos">
-                        <p>Fraca</p>
-                        <p>Média</p>
-                        <p>Forte</p>
-                    </div>
-                    <p class="entropia"></p>
-                </div>
+    <div id="container">
+        <div id="fundoGame">
+            <div id="inicio" onclick="start()">
+                <h1> Resgate </h1>
+                <p>Utilize a tecla ↑ para movimentar o helicóptero para cima, a tecla ↓ para movimentar o helicóptero para baixo e a tecla D para atirar.</p>
+                <p> Clique aqui para iniciar!! </p>
             </div>
         </div>
-    </section>
-    <script src="main.js"></script>
-</body>
+    </div>
 
+    <!-- Sons do jogo ! -->
+    <audio src="./src/assets/audios/som.mp3" preload="auto" id="somDisparo"></audio>
+    <audio src="./src/assets/audios/explosao.mp3" preload="auto" id="somExplosao"></audio>
+    <audio src="./src/assets/audios/musica_fundo.mp3" preload="auto" id="musica"></audio>
+    <audio src="./src/assets/audios/gameover.mp3" preload="auto" id="somGameover"></audio>
+    <audio src="./src/assets/audios/perdido.mp3" preload="auto" id="somPerdido"></audio>	
+    <audio src="./src/assets/audios/resgate.mp3" preload="auto" id="somResgate"></audio>
+
+    <script type="text/javascript" src="./src/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./src/scripts/main.js"></script>
+    <script type="text/javascript" src="./src/js/jquery-collision.min.js"></script>
+</body>
+<footer>
+    <p>Projeto desenvolvido no curso "Construindo o seu primeiro jogo de naves"<br>do Bootcamp JavaScript Game Developer da <a href="https://digitalinnovation.one/" target="_blank" rel="noopener noreferrer">Digital Innovation One</a></p>
+    <p>Repositório <a href="https://github.com/ReinaldoOliveiraaa/jogo-da-nave.git" target="_blank" rel="noopener noreferrer">GitHub</a> desde projeto</p>
+    <p>Desenvolvido por <a href="https://jogo-da-nave-seven.vercel.app/" target="_blank" rel="noopener noreferrer">Reinaldo de Oliveira</a></p>
+</footer>
 </html>
